@@ -1,11 +1,10 @@
 import React from 'react'
+import Layout from '../Layout/Layout'
 import '../css/index.css'
 
 const App = () => {
   return (
-    <div className='text-3xl font-bold underline'>
-      Nguyễn Trung Khiêm
-    </div>
+    <Layout />
   )
 }
 
