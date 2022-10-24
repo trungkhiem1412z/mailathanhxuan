@@ -5,7 +5,7 @@ const formatDate = (yourDate: Date) => {
         hrs = (Math.floor(Math.floor((today.valueOf() - yourDate.valueOf()) / 1000) / 60 / 60)) % 24,
         min = (Math.floor(Math.floor((today.valueOf() - yourDate.valueOf()) / 1000) / 60)) % 60,
         sec = Math.floor((today.valueOf() - yourDate.valueOf()) / 1000) % 60;
-    return `${(hrs > 9) ? hrs : "0" + hrs}:${(min > 9) ? min : "0" + min}:${(sec > 9) ? sec : "0" + sec}`;
+    return `${(hrs > 9) ? hrs : "0" + hrs} Giờ ${(min > 9) ? min : "0" + min} Phút ${(sec > 9) ? sec : "0" + sec} Giây`;
 }
 
 const CountTime = () => {
@@ -17,14 +17,14 @@ const CountTime = () => {
             const newDateString: number = Math.floor(Math.floor((new Date().valueOf() - yourDate.valueOf()) / 1000) / 60 / 60 / 24);
             const newTimeString: string = formatDate(yourDate);
 
-            setDayString(`${newDateString}`);
+            setDayString(`${newDateString} Ngày`);
             setTimeString(newTimeString);
         }, 1000)
     }, [])
     return (
         <div>
-            <div className='date'>{dateString} Ngày</div>
-            <div className='time'>{timeString}</div>
+            <div className='text-center'>{dateString}</div>
+            <div className='text-center'>{timeString}</div>
         </div>
     )
 }
